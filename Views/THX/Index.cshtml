@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+
+<h2>Search</h2>
+
+<form asp-action="Search" method="post">
+    <div>
+        <label for="IdTinh">Mã Tỉnh:</label>
+        <input type="text" id="IdTinh" name="IdTinh" />
+    </div>
+    <div>
+        <label for="IdHuyen">Mã Huyện:</label>
+        <input type="text" id="IdHuyen" name="IdHuyen" />
+    </div>
+    <div>
+        <label for="IdXa">Mã Xã:</label>
+        <input type="text" id="IdXa" name="IdXa" />
+    </div>
+    <div>
+        <label for="Ten">Tên:</label>
+        <input type="text" id="Ten" name="Ten" />
+    </div>
+    <div>
+        <input type="submit" value="Search" />
+    </div>
+</form>

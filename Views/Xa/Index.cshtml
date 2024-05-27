@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Web_CRUD.Entities.Xa>
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">
+                    Xã Tables - <a asp-controller="Xa" asp-action="Create" class="btn btn-success">Create</a>
+                </h4>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+                <div class="live-preview">
+                    <div class="table-responsive">
+                        <table class="table table-bordered align-middle table-nowrap mb-0">
+                            <thead class="thead-light text-center">
+                                <tr>
+                                    <th scope="col">Mã Xã</th>
+                                    <th scope="col">Tên Xã</th>
+                                    <th scope="col">Cấp</th>
+                                    <th scope="col">Mã Huyện</th>
+                                    <th scope="col">Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="fw-medium text-center">@item.IdXa</td>
+                                        <td class="text-center">@item.Ten</td>
+                                        <td class="text-center">@item.Cap</td>
+                                        <td class="text-center">@item.IdHuyen</td>
+                                        <td class="text-center">
+                                            <a class="btn btn-primary btn-sm" asp-controller="Xa" asp-action="Edit" asp-route-id="@item.IdXa">Edit</a>
+                                            <form asp-controller="Xa" asp-action="Delete" method="post" style="display: inline;">
+                                                <input type="hidden" name="id" value="@item.IdXa" />
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div><!-- end card-body -->
+        </div><!-- end card -->
+    </div>
+</div>
+
+<style>
+    .table-bordered {
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+    }
+
+    .table thead th {
+        vertical-align: middle;
+    }
+
+    .table tbody td {
+        vertical-align: middle;
+    }
+
+    .btn {
+        border-radius: 0.25rem;
+    }
+</style>

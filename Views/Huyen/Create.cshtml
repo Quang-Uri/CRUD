@@ -1,0 +1,26 @@
+﻿@model Web_CRUD.Entities.Huyen
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-header align-items-center d-flex">
+                <form asp-controller="Huyen" asp-action="Create" method="post">
+                    <div class="mb-3">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">ID Tỉnh mẹ</label>
+                            <input type="text" class="form-control" asp-for="IdTinh" id="exampleInputPassword1">
+                        </div>
+                        <label for="exampleInputPassword1" class="form-label">Tên Huyện</label>
+                        <input type="text" class="form-control" asp-for="Ten" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Cấp</label>
+                        <input type="text" class="form-control" asp-for="Cap" id="exampleInputPassword1">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
